@@ -163,6 +163,10 @@ select {
   margin-inline: auto;
 }
 
+.hide {
+  display: none;
+}
+
 .box {
   min-height: 6.8rem;
 }
@@ -241,7 +245,7 @@ select {
 .fs-600 { font-size: var(--fs-600); }
 .fs-500 { font-size: var(--fs-500); }
 
-
+.letter-space {letter-spacing: 2.5px;}
 
 .uppercase { text-transform: uppercase; }
 
