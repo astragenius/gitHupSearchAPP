@@ -20,13 +20,33 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/domRender.js":
+/*!**************************!*\
+  !*** ./src/domRender.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"renderData\": () => (/* binding */ renderData)\n/* harmony export */ });\n\r\n\r\nconst renderData = (data) => {\r\n    const { avatar_url, bio, company, created_at, followers, following, location, login, public_repos, twitter_username } = data;\r\n\r\n    document.getElementById('avatar').src = avatar_url;\r\n    //document.getElementById('bio').innerText = bio;\r\n    //document.getElementById('date').innerText = created_at;\r\n    document.getElementById('login').innerText = login;\r\n    document.getElementById('repo').innerText = public_repos;\r\n    document.getElementById('follower').innerText = followers;\r\n    document.getElementById('following').innerText = following;\r\n\r\n   \r\n\r\n}   \r\n\r\n\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://github-user-search-app/./src/domRender.js?");
+
+/***/ }),
+
+/***/ "./src/fetchData.js":
+/*!**************************!*\
+  !*** ./src/fetchData.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ getData)\n/* harmony export */ });\n/* harmony import */ var _domRender__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./domRender */ \"./src/domRender.js\");\n\r\n\r\nasync function getData(user) {\r\n\r\n    try{\r\n        const userData = await fetch(`https://api.github.com/users/${user}`);\r\n        const data = await userData.json();\r\n        (0,_domRender__WEBPACK_IMPORTED_MODULE_0__.renderData)(data);\r\n    }catch (error) {\r\n        \r\n        console.log(error);\r\n    }\r\n}\n\n//# sourceURL=webpack://github-user-search-app/./src/fetchData.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dark_light__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dark_light */ \"./src/dark_light.js\");\n\r\n\r\nconst toggleBtn = document.getElementById('toggle-btn');\r\n\r\ntoggleBtn.addEventListener('click', _dark_light__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n//# sourceURL=webpack://github-user-search-app/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dark_light__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dark_light */ \"./src/dark_light.js\");\n/* harmony import */ var _fetchData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./fetchData */ \"./src/fetchData.js\");\n\r\n\r\n\r\nconst toggleBtn = document.getElementById('toggle-btn');\r\nconst searchBtn = document.getElementById('search_btn');\r\n\r\nconsole.log(avatar);\r\n\r\n\r\n\r\n\r\n\r\nsearchBtn.addEventListener('click', () =>{\r\n    (0,_fetchData__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(document.getElementById('search_bar').value);\r\n})\r\n\r\ntoggleBtn.addEventListener('click', _dark_light__WEBPACK_IMPORTED_MODULE_0__[\"default\"]);\n\n//# sourceURL=webpack://github-user-search-app/./src/index.js?");
 
 /***/ })
 

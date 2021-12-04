@@ -40,21 +40,21 @@
             <label for="search_bar" class="fs-500 mr-1 ml-1">No Results</label>
         </div>
         
-        <button class="mobile-btn btn fs-600 br-1 line-h-3">Search</button>
+        <button id="search_btn" class="mobile-btn btn fs-600 br-1 line-h-3">Search</button>
     </div>
 
     <section class="flex flex-col flex-space-b container bg-light-box p-5 br-2 box-shadow">
 
                   <div class="flex flex-space-b flex-gap-1 mb-2">
                       <div>
-                        <img class="mobile-user_img user_img" src="/dist/img/avatar.jpg" alt="image platzhalter">
+                        <img id="avatar" class="mobile-user_img user_img" src="/dist/img/avatar.jpg" alt="image platzhalter">
                       </div>
                         <div class="title_area flex-space-b flex flex-1">
                               <div class="mb-0">
                                 <h1 class="fs-m-700 fs-900 fc-bold-color ff-space-bold font-color">The Octocat</h1>
-                                 <span class="fs-m-500 fs-600 fc-blue">@octocat</span>
+                                 <span id="login" class="fs-m-500 fs-600 fc-blue">@octocat</span>
                               </div>
-                                <span><p class="fs-m-500 fs-600 font-color ff-space-normal">Joined 25 Jan 2011</p></span>
+                                <span><p id="date" class="fs-m-500 fs-600 font-color ff-space-normal">Joined 25 Jan 2011</p></span>
                       
                         </div>
                   </div>
@@ -64,12 +64,12 @@
                 <div class="content-container flex flex-col">
 
                     <div class="mb-3">
-                      <span class="fs-500 font-color"> Lorem ipsum dolor sit amet consectetur adipisicing elit. !</span>
+                      <span id="bio" class="fs-500 font-color"> Lorem ipsum dolor sit amet consectetur adipisicing elit. !</span>
                     </div>
                     <div class="flex flex-space-a bg-light br-1 pt-1 pb-1 mb-3">
-                      <div class="flex m-flex-1 flex-col"><span class="fs-m-400 fs-500 font-grey m-mb-0">Repos</span><h2 class="fs-m-700 fs-800 font-color">8</h2></div>
-                      <div class="flex m-flex-1 flex-col"> <span class="fs-m-400 fs-500 font-grey m-mb-0">Followers</span> <h2 class="fs-m-700 fs-800 font-color">3938</h2></div>
-                      <div class="flex m-flex-1 flex-col"> <span class="fs-m-400 fs-500 font-grey m-mb-0">Following</span> <h2 class="fs-m-700 fs-800 font-color">9</h2>  </div>
+                      <div class="flex m-flex-1 flex-col"><span class="fs-m-400 fs-500 font-grey m-mb-0">Repos</span><h2 id="repo" class="fs-m-700 fs-800 font-color">8</h2></div>
+                      <div class="flex m-flex-1 flex-col"> <span class="fs-m-400 fs-500 font-grey m-mb-0">Followers</span> <h2 id="follower" class="fs-m-700 fs-800 font-color">3938</h2></div>
+                      <div class="flex m-flex-1 flex-col"> <span class="fs-m-400 fs-500 font-grey m-mb-0">Following</span> <h2 id="following" class="fs-m-700 fs-800 font-color">9</h2>  </div>
                         <div></div>
                     </div>
 
