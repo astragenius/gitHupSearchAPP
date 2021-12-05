@@ -9,20 +9,32 @@ const renderData = (data) => {
     document.getElementById('date').innerText = formatDate(created_at);
     
    
-    setName( document.getElementById('name'), name, login);
     document.getElementById('repo').innerText = public_repos;
     document.getElementById('follower').innerText = followers;
     document.getElementById('following').innerText = following;
+    setName( document.getElementById('name'), name, login);
     seturl(document.getElementById('login'), html_url, login);
     checkLocation(document.getElementById('location'), location);
     checkTwitter(document.getElementById('twitter'), twitter_username);
     checkLinks(document.getElementById('company'), company);
     checkLinks(document.getElementById('blog'), blog);
 
-
-
     
 }   
+
+const renderError = () =>{
+
+    document.getElementById('error').classList.remove('hide');
+}
+
+const removeError = () => {
+
+    if(document.getElementById('error').matches('hide') == false) {
+        document.getElementById('error').classList.add('hide');
+    }else {
+        return;
+    }
+}
 
 const seturl = (el, data, dataName) => {
 
@@ -107,4 +119,4 @@ const checkLocation = (el, data) => {
 }
 
 
-export { renderData }
+export { renderData, renderError, removeError }

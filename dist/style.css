@@ -248,6 +248,7 @@ select {
 .letter-space {letter-spacing: 2.5px;}
 
 .uppercase { text-transform: uppercase; }
+.text-underline-none { text-decoration: none; };
 
 .line-h-5 { line-height: 2.375rem; }
 .line-h-4 { line-height: 2.0625rem; }
@@ -305,15 +306,11 @@ select {
 }
 
 .search_bar label {
-  
-  display: none;
-}
-.search_bar label:invalid {
-
-  display: block;
+  font-weight: bold;
   color: #F74646;
-  
+  letter-spacing: 2px;
 }
+
 
 
 .btn {
