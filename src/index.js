@@ -4,7 +4,8 @@ import getData from "./fetchData";
 const toggleBtn = document.getElementById('toggle-btn');
 const searchBtn = document.getElementById('search_btn');
 
-console.log(avatar);
+
+
 
 
 

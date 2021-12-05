@@ -45,6 +45,9 @@
 
   --unavailable: 217 35% 45%;
 
+ 
+  --hover-color: 220 18% 16%;
+
   --white: 0 0% 100%;
 }
 .dark-mode:root {
@@ -63,8 +66,8 @@
   --bg-box: 222 41% 20%;/* background-color for main content */
 
   
-
-  --white: 0 0% 100%;
+  --hover-color: 222 44% 70%;
+  --white: 0 0% 0%;
 
   --unavailable: 0 0% 100%;
 }
@@ -320,7 +323,7 @@ select {
   border: none;
   width: 108px;
   height: 50px;
-  color: hsl(var(--white));
+  color: white;
   
 }
 
@@ -347,9 +350,8 @@ select {
   fill:hsl( var(--font-color))
 }
 
-.svg-sun:hover .toggle-btn {
-  
-  fill: hsl( var(--bold-color) )
+.toggle-btn:hover {
+  color: hsl(var(--hover-color));
 }
 
 /* Links */

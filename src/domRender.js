@@ -15,8 +15,8 @@ const renderData = (data) => {
     seturl(document.getElementById('login'), html_url, login);
     checkLocation(document.getElementById('location'), location);
     checkTwitter(document.getElementById('twitter'), twitter_username);
-    checkLinks(document.getElementById('company'), company);
-    checkLinks(document.getElementById('blog'), blog);
+    checkCompany(document.getElementById('company'), company);
+    checkBlog(document.getElementById('blog'), blog);
 
     
 }   
@@ -76,25 +76,34 @@ const checkBio = (data) => {
 
 const checkTwitter = (el, data) => {
 
+    const svg = document.getElementById('twitter_icon');
+
         if(data == null || data == '') {
             el.innerText = 'Not Available';
             el.classList.add('link_not');
             el.href = '';
+            svg.children[0].classList.add('svg_not');
+            svg.children[0].classList.remove('svg_fill');
+            
         } else {
             
             el.href = `https://www.twitter.com/${data}`;
             el.innerText = data; 
             el.classList.remove('link_not');
+            svg.children[0].classList.remove('svg_not');
+            svg.children[0].classList.add('svg_fill');
         }
 }
 
-const checkLinks = (el, data) => {
+const checkBlog = (el, data) => {
    
-    
+    const svg = document.getElementById('blog_icon');
     if(data == null || data == '') {
 
         el.innerText = 'Not Available';
         el.classList.add('link_not');
+        svg.children[0].classList.add('svg_not');
+        svg.children[0].classList.remove('svg_fill');
         el.href = '';
 
     }else {
@@ -102,18 +111,47 @@ const checkLinks = (el, data) => {
         el.innerText = data;
         el.href = data;
         el.classList.remove('link_not');
+        svg.children[0].classList.remove('svg_not');
+        svg.children[0].classList.add('svg_fill');
+    }
+
+}
+
+const checkCompany = (el, data) => {
+   
+    const svg = document.getElementById('company_icon');
+    if(data == null || data == '') {
+
+        el.innerText = 'Not Available';
+        el.classList.add('link_not');
+        svg.children[0].classList.remove('svg_fill');
+        svg.children[0].classList.add('svg_not');
+        el.href = '';
+
+    }else {
+        
+        el.innerText = data;
+        el.href = data;
+        el.classList.remove('link_not');
+        svg.children[0].classList.remove('svg_not');
+        svg.children[0].classList.add('svg_fill44');
     }
 
 }
 
 const checkLocation = (el, data) => {
-
+    const svg = document.getElementById('location_icon');
     if(data == null || data == '') {
 
         el.innerText = "Location unknown";
+        svg.children[0].classList.add('svg_not');
+        svg.children[0].classList.remove('svg_fill');
     }else {
 
         el.innerText = data;
+        svg.children[0].classList.remove('svg_not');
+        svg.children[0].classList.add('svg_fill');
+        
     }
 }
 
