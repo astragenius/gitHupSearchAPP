@@ -3,7 +3,7 @@
 const renderData = (data) => {
     const { avatar_url, bio, company, created_at, followers, following, location, login, public_repos, twitter_username, blog, name } = data;
 
-    console.log(company);
+    console.log(data);
     console.log(blog);
     document.getElementById('avatar').src = avatar_url;
     document.getElementById('bio').innerText = bioCheck(bio);
@@ -14,7 +14,7 @@ const renderData = (data) => {
     document.getElementById('follower').innerText = followers;
     document.getElementById('following').innerText = following;
     checkLocation(document.getElementById('location'), location);
-    checkLinks(document.getElementById('twitter'), twitter_username);
+    checkTwitter(document.getElementById('twitter'), twitter_username);
     checkLinks(document.getElementById('company'), company);
     checkLinks(document.getElementById('blog'), blog);
 
@@ -43,6 +43,20 @@ const bioCheck = (data) => {
         return data
     }
 
+}
+
+const checkTwitter = (el, data) => {
+
+        if(data == null || data == '') {
+            el.innerText = 'Not Available';
+            el.classList.add('link_not');
+            el.href = '';
+        } else {
+            
+            el.href = `https://www.twitter.com/${data}`;
+            el.innerText = data; 
+            el.classList.remove('link_not');
+        }
 }
 
 const checkLinks = (el, data) => {
