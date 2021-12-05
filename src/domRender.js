@@ -4,12 +4,12 @@ const renderData = (data) => {
     const { avatar_url, bio, company, created_at, followers, following, location, login, public_repos, twitter_username, blog, name, html_url } = data;
 
     console.log(data);
-    console.log(blog);
     document.getElementById('avatar').src = avatar_url;
     document.getElementById('bio').innerText = checkBio(bio);
     document.getElementById('date').innerText = formatDate(created_at);
     
-    document.getElementById('name').innerText = name;
+   
+    setName( document.getElementById('name'), name, login);
     document.getElementById('repo').innerText = public_repos;
     document.getElementById('follower').innerText = followers;
     document.getElementById('following').innerText = following;
@@ -29,6 +29,18 @@ const seturl = (el, data, dataName) => {
     el.innerText = dataName;
     el.href = data;
 }
+
+const setName = (el, data, data1) => {
+
+    if(data == '' || data == null) {
+
+        el.innerText = data1;
+    } else {
+
+        el.innerText = data;
+    }
+}
+
 
 const formatDate = (date) => {
 
